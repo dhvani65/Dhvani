@@ -2,17 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Python Developer Portfolio</title>
   <style>
     * {
-      scroll-behavior: smooth;
       box-sizing: border-box;
+      scroll-behavior: smooth;
     }
 
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: #f9f9f9;
       color: #333;
     }
@@ -20,59 +20,52 @@
     /* Navbar */
     nav {
       background-color: #2b2d42;
-      position: sticky;
-      top: 0;
-      z-index: 999;
       padding: 10px 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
 
-    nav .brand {
+    .brand {
       color: white;
       font-size: 20px;
       font-weight: bold;
     }
 
-    nav ul {
-      margin: 0;
-      padding: 0;
-      display: flex;
-      list-style: none;
+    .menu-icon {
+      font-size: 24px;
+      color: white;
+      cursor: pointer;
+      display: block;
     }
 
-    nav ul li {
-      margin-left: 20px;
+    .menu {
+      display: none;
+      position: absolute;
+      top: 60px;
+      right: 20px;
+      background-color: #2b2d42;
+      border-radius: 5px;
+      overflow: hidden;
+      flex-direction: column;
+      min-width: 160px;
     }
 
-    nav ul li a {
+    .menu a {
+      padding: 12px 16px;
       color: white;
       text-decoration: none;
-      font-weight: 500;
-      font-size: 15px;
-      padding: 8px 10px;
-      border-radius: 4px;
+      display: block;
     }
 
-    nav ul li a:hover {
+    .menu a:hover {
       background-color: #ef233c;
     }
 
-    .btn-resume {
-      background-color: #ef233c;
-      color: white;
-      padding: 8px 12px;
-      border-radius: 4px;
-      font-weight: bold;
-      text-decoration: none;
-      margin-left: 20px;
-    }
-
-    .btn-resume:hover {
-      background-color: #d90429;
-    }
-
+    /* Header */
     header {
       background-color: #2b2d42;
       color: white;
@@ -90,6 +83,7 @@
       margin-top: 10px;
     }
 
+    /* Container */
     .container {
       max-width: 1000px;
       margin: 0 auto;
@@ -134,6 +128,25 @@
     a:hover {
       text-decoration: underline;
     }
+
+    @media (min-width: 600px) {
+      .menu-icon {
+        display: none;
+      }
+
+      .menu {
+        display: flex !important;
+        position: static;
+        background: none;
+        flex-direction: row;
+      }
+
+      .menu a {
+        padding: 10px 15px;
+        color: white;
+        font-weight: 500;
+      }
+    }
   </style>
 </head>
 <body>
@@ -141,12 +154,13 @@
   <!-- Navbar -->
   <nav>
     <div class="brand">Your Name</div>
-    <ul>
-      <li><a href="#experience">Work Experience</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-      <li><a class="btn-resume" href="resume.pdf" download>Download Resume</a></li>
-    </ul>
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    <div class="menu" id="menu">
+      <a href="#projects">Projects</a>
+      <a href="#experience">Work Experience</a>
+      <a href="#contact">Contact</a>
+      <a href="resume.pdf" download>Download Resume</a>
+    </div>
   </nav>
 
   <!-- Header -->
@@ -155,55 +169,41 @@
     <p>Python Developer | Data Analyst | Automation Expert</p>
   </header>
 
-  <!-- Main Content -->
+  <!-- Content -->
   <div class="container">
 
-    <!-- Work Experience Section -->
+    <!-- Work Experience -->
     <section id="experience">
       <h2>Work Experience</h2>
-
       <div class="experience">
         <h3>Software Engineer – ABC Tech</h3>
         <p><strong>Jan 2023 – Present</strong></p>
-        <p>Developed backend services and automated pipelines using Python and Flask. Improved efficiency of data processing tasks by 40%.</p>
-        <p><strong>Skills:</strong> Python, Flask, PostgreSQL, Docker</p>
+        <p>Worked on backend development and automation using Flask and Python. Improved system performance by 30%.</p>
       </div>
 
       <div class="experience">
         <h3>Data Analyst – XYZ Corp</h3>
         <p><strong>July 2021 – Dec 2022</strong></p>
-        <p>Built dashboards and automated reports, using Pandas and Dash to monitor user metrics and sales performance.</p>
-        <p><strong>Skills:</strong> Pandas, SQL, Plotly, Excel</p>
+        <p>Created dashboards using Dash and visualized customer data trends for strategic planning.</p>
       </div>
     </section>
 
-    <!-- Projects Section -->
+    <!-- Projects -->
     <section id="projects">
       <h2>Projects</h2>
-
       <div class="project">
         <h3>Job Listings Scraper</h3>
-        <p>Python script that scrapes job data and exports it to CSV or database daily.</p>
-        <p><strong>Tech:</strong> BeautifulSoup, Requests</p>
-        <a href="https://github.com/yourusername/job-scraper" target="_blank">View on GitHub</a>
+        <p>Scrapes and stores job data from online boards. Automated daily reports.</p>
+        <a href="https://github.com/yourusername/job-scraper" target="_blank">GitHub Repo</a>
       </div>
-
       <div class="project">
-        <h3>REST API with Flask</h3>
-        <p>API for task management with JWT authentication and CRUD operations.</p>
-        <p><strong>Tech:</strong> Flask, SQLAlchemy, JWT</p>
-        <a href="https://github.com/yourusername/flask-api" target="_blank">View on GitHub</a>
-      </div>
-
-      <div class="project">
-        <h3>COVID-19 Data Dashboard</h3>
-        <p>Interactive data dashboard built with Dash to visualize global COVID stats.</p>
-        <p><strong>Tech:</strong> Dash, Pandas, Plotly</p>
-        <a href="https://github.com/yourusername/covid-dashboard" target="_blank">View on GitHub</a>
+        <h3>RESTful API with Flask</h3>
+        <p>Created a task manager backend with user auth and token-based login.</p>
+        <a href="https://github.com/yourusername/flask-api" target="_blank">GitHub Repo</a>
       </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Contact -->
     <section id="contact">
       <h2>Contact</h2>
       <p>Email: <a href="mailto:you@example.com">you@example.com</a></p>
@@ -218,5 +218,16 @@
     <p>© 2025 Your Name. All rights reserved.</p>
   </footer>
 
+  <!-- JavaScript -->
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('menu');
+      if (menu.style.display === 'flex') {
+        menu.style.display = 'none';
+      } else {
+        menu.style.display = 'flex';
+      }
+    }
+  </script>
 </body>
 </html>
