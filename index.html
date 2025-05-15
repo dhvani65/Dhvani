@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Python Developer Portfolio</title>
   <style>
-    /* Global Styles */
     * {
       scroll-behavior: smooth;
       box-sizing: border-box;
@@ -24,27 +23,35 @@
       position: sticky;
       top: 0;
       z-index: 999;
-      padding: 10px 0;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav .brand {
+      color: white;
+      font-size: 20px;
+      font-weight: bold;
     }
 
     nav ul {
       margin: 0;
       padding: 0;
       display: flex;
-      justify-content: center;
       list-style: none;
     }
 
     nav ul li {
-      margin: 0 15px;
+      margin-left: 20px;
     }
 
     nav ul li a {
       color: white;
       text-decoration: none;
-      font-weight: bold;
-      font-size: 16px;
-      padding: 8px 12px;
+      font-weight: 500;
+      font-size: 15px;
+      padding: 8px 10px;
       border-radius: 4px;
     }
 
@@ -52,7 +59,20 @@
       background-color: #ef233c;
     }
 
-    /* Header */
+    .btn-resume {
+      background-color: #ef233c;
+      color: white;
+      padding: 8px 12px;
+      border-radius: 4px;
+      font-weight: bold;
+      text-decoration: none;
+      margin-left: 20px;
+    }
+
+    .btn-resume:hover {
+      background-color: #d90429;
+    }
+
     header {
       background-color: #2b2d42;
       color: white;
@@ -70,7 +90,6 @@
       margin-top: 10px;
     }
 
-    /* Content Container */
     .container {
       max-width: 1000px;
       margin: 0 auto;
@@ -88,7 +107,6 @@
       margin-bottom: 20px;
     }
 
-    /* Projects and Work Cards */
     .project, .experience {
       background-color: white;
       padding: 15px 20px;
@@ -122,10 +140,12 @@
 
   <!-- Navbar -->
   <nav>
+    <div class="brand">Your Name</div>
     <ul>
       <li><a href="#experience">Work Experience</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#contact">Contact</a></li>
+      <li><a class="btn-resume" href="resume.pdf" download>Download Resume</a></li>
     </ul>
   </nav>
 
@@ -145,15 +165,15 @@
       <div class="experience">
         <h3>Software Engineer – ABC Tech</h3>
         <p><strong>Jan 2023 – Present</strong></p>
-        <p>Developed and maintained backend services for analytics platform using Flask and PostgreSQL. Implemented ETL pipelines and automation scripts for data ingestion.</p>
-        <p><strong>Skills:</strong> Python, Flask, PostgreSQL, Docker, Git</p>
+        <p>Developed backend services and automated pipelines using Python and Flask. Improved efficiency of data processing tasks by 40%.</p>
+        <p><strong>Skills:</strong> Python, Flask, PostgreSQL, Docker</p>
       </div>
 
       <div class="experience">
         <h3>Data Analyst – XYZ Corp</h3>
         <p><strong>July 2021 – Dec 2022</strong></p>
-        <p>Automated data reporting tasks, built dashboards in Python using Dash and Plotly, and worked with large datasets for customer analytics.</p>
-        <p><strong>Skills:</strong> Pandas, NumPy, SQL, Dash, Excel</p>
+        <p>Built dashboards and automated reports, using Pandas and Dash to monitor user metrics and sales performance.</p>
+        <p><strong>Skills:</strong> Pandas, SQL, Plotly, Excel</p>
       </div>
     </section>
 
@@ -163,23 +183,23 @@
 
       <div class="project">
         <h3>Job Listings Scraper</h3>
-        <p>Script to collect job data from multiple job boards, export to CSV, and send email summaries daily.</p>
-        <p><strong>Tools:</strong> BeautifulSoup, Requests, Pandas</p>
-        <a href="https://github.com/yourusername/job-scraper" target="_blank">GitHub Repo</a>
+        <p>Python script that scrapes job data and exports it to CSV or database daily.</p>
+        <p><strong>Tech:</strong> BeautifulSoup, Requests</p>
+        <a href="https://github.com/yourusername/job-scraper" target="_blank">View on GitHub</a>
       </div>
 
       <div class="project">
-        <h3>Flask API Backend</h3>
-        <p>Built REST API for task management with user login and data persistence using SQLite.</p>
-        <p><strong>Tools:</strong> Flask, SQLAlchemy, JWT</p>
-        <a href="https://github.com/yourusername/flask-api" target="_blank">GitHub Repo</a>
+        <h3>REST API with Flask</h3>
+        <p>API for task management with JWT authentication and CRUD operations.</p>
+        <p><strong>Tech:</strong> Flask, SQLAlchemy, JWT</p>
+        <a href="https://github.com/yourusername/flask-api" target="_blank">View on GitHub</a>
       </div>
 
       <div class="project">
-        <h3>Data Visualization Dashboard</h3>
-        <p>Created interactive COVID-19 data visualizations using Dash and Plotly.</p>
-        <p><strong>Tools:</strong> Dash, Plotly, Pandas</p>
-        <a href="https://github.com/yourusername/covid-dashboard" target="_blank">GitHub Repo</a>
+        <h3>COVID-19 Data Dashboard</h3>
+        <p>Interactive data dashboard built with Dash to visualize global COVID stats.</p>
+        <p><strong>Tech:</strong> Dash, Pandas, Plotly</p>
+        <a href="https://github.com/yourusername/covid-dashboard" target="_blank">View on GitHub</a>
       </div>
     </section>
 
