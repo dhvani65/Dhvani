@@ -1,23 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Python Developer Portfolio</title>
   <style>
+    /* Global Styles */
+    * {
+      scroll-behavior: smooth;
+      box-sizing: border-box;
+    }
+
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
-      padding: 0;
-      background-color: #f5f5f5;
+      background-color: #f9f9f9;
       color: #333;
     }
 
+    /* Navbar */
+    nav {
+      background-color: #2b2d42;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      padding: 10px 0;
+    }
+
+    nav ul {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      list-style: none;
+    }
+
+    nav ul li {
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+      padding: 8px 12px;
+      border-radius: 4px;
+    }
+
+    nav ul li a:hover {
+      background-color: #ef233c;
+    }
+
+    /* Header */
     header {
       background-color: #2b2d42;
       color: white;
-      padding: 40px 20px;
       text-align: center;
+      padding: 50px 20px 30px;
     }
 
     header h1 {
@@ -26,35 +66,38 @@
     }
 
     header p {
-      font-size: 1.2em;
+      font-size: 1.1em;
       margin-top: 10px;
     }
 
+    /* Content Container */
     .container {
       max-width: 1000px;
-      margin: 40px auto;
-      padding: 0 20px;
+      margin: 0 auto;
+      padding: 40px 20px;
     }
 
     section {
-      margin-bottom: 40px;
+      margin-bottom: 50px;
     }
 
     h2 {
       color: #2b2d42;
       border-bottom: 2px solid #ccc;
       padding-bottom: 5px;
+      margin-bottom: 20px;
     }
 
-    .project {
+    /* Projects and Work Cards */
+    .project, .experience {
       background-color: white;
-      padding: 15px;
+      padding: 15px 20px;
       margin: 15px 0;
-      border-radius: 5px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      border-radius: 6px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
 
-    .project h3 {
+    .project h3, .experience h3 {
       margin-top: 0;
     }
 
@@ -77,44 +120,70 @@
 </head>
 <body>
 
+  <!-- Navbar -->
+  <nav>
+    <ul>
+      <li><a href="#experience">Work Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Header -->
   <header>
     <h1>Your Name</h1>
-    <p>Python Developer | Web Automation | Data Analysis | API Integration</p>
+    <p>Python Developer | Data Analyst | Automation Expert</p>
   </header>
 
+  <!-- Main Content -->
   <div class="container">
-    
-    <section id="about">
-      <h2>About Me</h2>
-      <p>I’m a Python developer with experience in building automation tools, data pipelines, and web applications. I love solving real-world problems with clean, maintainable code.</p>
+
+    <!-- Work Experience Section -->
+    <section id="experience">
+      <h2>Work Experience</h2>
+
+      <div class="experience">
+        <h3>Software Engineer – ABC Tech</h3>
+        <p><strong>Jan 2023 – Present</strong></p>
+        <p>Developed and maintained backend services for analytics platform using Flask and PostgreSQL. Implemented ETL pipelines and automation scripts for data ingestion.</p>
+        <p><strong>Skills:</strong> Python, Flask, PostgreSQL, Docker, Git</p>
+      </div>
+
+      <div class="experience">
+        <h3>Data Analyst – XYZ Corp</h3>
+        <p><strong>July 2021 – Dec 2022</strong></p>
+        <p>Automated data reporting tasks, built dashboards in Python using Dash and Plotly, and worked with large datasets for customer analytics.</p>
+        <p><strong>Skills:</strong> Pandas, NumPy, SQL, Dash, Excel</p>
+      </div>
     </section>
 
+    <!-- Projects Section -->
     <section id="projects">
       <h2>Projects</h2>
 
       <div class="project">
-        <h3>Web Scraper for Job Listings</h3>
-        <p>A Python script that scrapes job postings from multiple websites and saves them to a CSV or database.</p>
-        <p><strong>Tech:</strong> BeautifulSoup, Requests, Pandas</p>
-        <a href="https://github.com/yourusername/job-scraper" target="_blank">View on GitHub</a>
+        <h3>Job Listings Scraper</h3>
+        <p>Script to collect job data from multiple job boards, export to CSV, and send email summaries daily.</p>
+        <p><strong>Tools:</strong> BeautifulSoup, Requests, Pandas</p>
+        <a href="https://github.com/yourusername/job-scraper" target="_blank">GitHub Repo</a>
       </div>
 
       <div class="project">
-        <h3>RESTful API with Flask</h3>
-        <p>Developed a REST API for a task management app with user authentication and CRUD features.</p>
-        <p><strong>Tech:</strong> Flask, SQLAlchemy, JWT</p>
-        <a href="https://github.com/yourusername/flask-api" target="_blank">View on GitHub</a>
+        <h3>Flask API Backend</h3>
+        <p>Built REST API for task management with user login and data persistence using SQLite.</p>
+        <p><strong>Tools:</strong> Flask, SQLAlchemy, JWT</p>
+        <a href="https://github.com/yourusername/flask-api" target="_blank">GitHub Repo</a>
       </div>
 
       <div class="project">
         <h3>Data Visualization Dashboard</h3>
-        <p>A dashboard to visualize COVID-19 data using Plotly and Dash.</p>
-        <p><strong>Tech:</strong> Dash, Pandas, Plotly</p>
-        <a href="https://github.com/yourusername/covid-dashboard" target="_blank">View on GitHub</a>
+        <p>Created interactive COVID-19 data visualizations using Dash and Plotly.</p>
+        <p><strong>Tools:</strong> Dash, Plotly, Pandas</p>
+        <a href="https://github.com/yourusername/covid-dashboard" target="_blank">GitHub Repo</a>
       </div>
-
     </section>
 
+    <!-- Contact Section -->
     <section id="contact">
       <h2>Contact</h2>
       <p>Email: <a href="mailto:you@example.com">you@example.com</a></p>
@@ -124,6 +193,7 @@
 
   </div>
 
+  <!-- Footer -->
   <footer>
     <p>© 2025 Your Name. All rights reserved.</p>
   </footer>
