@@ -5,72 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Python Developer Portfolio</title>
   <style>
-    * {
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
-
     body {
-      margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
       background-color: #f9f9f9;
       color: #333;
+      line-height: 1.6;
     }
 
-    /* Navbar */
-    nav {
-      background-color: #2b2d42;
-      padding: 10px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-
-    .brand {
-      color: white;
-      font-size: 20px;
-      font-weight: bold;
-    }
-
-    .menu-icon {
-      font-size: 24px;
-      color: white;
-      cursor: pointer;
-      display: block;
-    }
-
-    .menu {
-      display: none;
-      position: absolute;
-      top: 60px;
-      right: 20px;
-      background-color: #2b2d42;
-      border-radius: 5px;
-      overflow: hidden;
-      flex-direction: column;
-      min-width: 160px;
-    }
-
-    .menu a {
-      padding: 12px 16px;
-      color: white;
-      text-decoration: none;
-      display: block;
-    }
-
-    .menu a:hover {
-      background-color: #ef233c;
-    }
-
-    /* Header */
     header {
       background-color: #2b2d42;
       color: white;
       text-align: center;
-      padding: 50px 20px 30px;
+      padding: 40px 20px;
     }
 
     header h1 {
@@ -79,11 +26,22 @@
     }
 
     header p {
-      font-size: 1.1em;
       margin-top: 10px;
+      font-size: 1.2em;
     }
 
-    /* Container */
+    .download-resume {
+      display: inline-block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      background-color: #ef233c;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
     .container {
       max-width: 1000px;
       margin: 0 auto;
@@ -98,19 +56,14 @@
       color: #2b2d42;
       border-bottom: 2px solid #ccc;
       padding-bottom: 5px;
-      margin-bottom: 20px;
     }
 
-    .project, .experience {
+    .block {
       background-color: white;
-      padding: 15px 20px;
-      margin: 15px 0;
+      padding: 20px;
+      margin-top: 15px;
       border-radius: 6px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
-
-    .project h3, .experience h3 {
-      margin-top: 0;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
 
     footer {
@@ -122,93 +75,78 @@
 
     a {
       color: #ef233c;
-      text-decoration: none;
     }
 
     a:hover {
       text-decoration: underline;
     }
-
-    @media (min-width: 600px) {
-      .menu-icon {
-        display: none;
-      }
-
-      .menu {
-        display: flex !important;
-        position: static;
-        background: none;
-        flex-direction: row;
-      }
-
-      .menu a {
-        padding: 10px 15px;
-        color: white;
-        font-weight: 500;
-      }
-    }
   </style>
 </head>
 <body>
 
-  <!-- Navbar -->
-  <nav>
-    <div class="brand">Your Name</div>
-    <div class="menu-icon" onclick="toggleMenu()">☰</div>
-    <div class="menu" id="menu">
-      <a href="#projects">Projects</a>
-      <a href="#experience">Work Experience</a>
-      <a href="#contact">Contact</a>
-      <a href="resume.pdf" download>Download Resume</a>
-    </div>
-  </nav>
-
   <!-- Header -->
   <header>
     <h1>Your Name</h1>
-    <p>Python Developer | Data Analyst | Automation Expert</p>
+    <p>Python Developer | Automation | Data Analysis</p>
+    <a class="download-resume" href="resume.pdf" download>Download Resume</a>
   </header>
 
-  <!-- Content -->
+  <!-- Main Content -->
   <div class="container">
 
     <!-- Work Experience -->
-    <section id="experience">
+    <section>
       <h2>Work Experience</h2>
-      <div class="experience">
+
+      <div class="block">
         <h3>Software Engineer – ABC Tech</h3>
         <p><strong>Jan 2023 – Present</strong></p>
-        <p>Worked on backend development and automation using Flask and Python. Improved system performance by 30%.</p>
+        <p>Built backend services using Flask and automated workflows to process data in real-time. Collaborated with frontend team for full-stack delivery.</p>
+        <p><strong>Skills:</strong> Python, Flask, PostgreSQL, Docker</p>
       </div>
 
-      <div class="experience">
+      <div class="block">
         <h3>Data Analyst – XYZ Corp</h3>
         <p><strong>July 2021 – Dec 2022</strong></p>
-        <p>Created dashboards using Dash and visualized customer data trends for strategic planning.</p>
+        <p>Developed automated data reports and dashboards using Dash and Pandas. Helped reduce reporting time by 60%.</p>
+        <p><strong>Skills:</strong> Pandas, SQL, Dash, Excel</p>
       </div>
     </section>
 
     <!-- Projects -->
-    <section id="projects">
+    <section>
       <h2>Projects</h2>
-      <div class="project">
+
+      <div class="block">
         <h3>Job Listings Scraper</h3>
-        <p>Scrapes and stores job data from online boards. Automated daily reports.</p>
+        <p>Automates collection of job data from multiple sources and exports it to CSV daily.</p>
+        <p><strong>Tools:</strong> BeautifulSoup, Requests</p>
         <a href="https://github.com/yourusername/job-scraper" target="_blank">GitHub Repo</a>
       </div>
-      <div class="project">
-        <h3>RESTful API with Flask</h3>
-        <p>Created a task manager backend with user auth and token-based login.</p>
+
+      <div class="block">
+        <h3>Flask Task Manager API</h3>
+        <p>A RESTful API for task management with token-based user authentication and CRUD features.</p>
+        <p><strong>Tools:</strong> Flask, SQLAlchemy, JWT</p>
         <a href="https://github.com/yourusername/flask-api" target="_blank">GitHub Repo</a>
+      </div>
+
+      <div class="block">
+        <h3>COVID-19 Dashboard</h3>
+        <p>Interactive dashboard for visualizing global COVID stats using Dash and Plotly.</p>
+        <p><strong>Tools:</strong> Dash, Pandas, Plotly</p>
+        <a href="https://github.com/yourusername/covid-dashboard" target="_blank">GitHub Repo</a>
       </div>
     </section>
 
     <!-- Contact -->
-    <section id="contact">
+    <section>
       <h2>Contact</h2>
-      <p>Email: <a href="mailto:you@example.com">you@example.com</a></p>
-      <p>GitHub: <a href="https://github.com/yourusername" target="_blank">@yourusername</a></p>
-      <p>LinkedIn: <a href="https://linkedin.com/in/yourusername" target="_blank">linkedin.com/in/yourusername</a></p>
+      <div class="block">
+        <p><strong>Email:</strong> <a href="mailto:you@example.com">you@example.com</a></p>
+        <p><strong>GitHub:</strong> <a href="https://github.com/yourusername" target="_blank">@yourusername</a></p>
+        <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/yourusername" target="_blank">linkedin.com/in/yourusername</a></p>
+      </div>
     </section>
 
   </div>
@@ -218,16 +156,5 @@
     <p>© 2025 Your Name. All rights reserved.</p>
   </footer>
 
-  <!-- JavaScript -->
-  <script>
-    function toggleMenu() {
-      const menu = document.getElementById('menu');
-      if (menu.style.display === 'flex') {
-        menu.style.display = 'none';
-      } else {
-        menu.style.display = 'flex';
-      }
-    }
-  </script>
 </body>
 </html>
